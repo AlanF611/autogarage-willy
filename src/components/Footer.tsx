@@ -22,7 +22,7 @@ export default function Footer() {
             {/* LOGO */}
             <Link to="/" className="inline-block mb-4">
               <img
-                src="/img/logo1.png"
+                src="/img/logo.png"
                 alt="Autogarage Willy"
                 className="h-20 w-auto"
               />
