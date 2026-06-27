@@ -41,7 +41,7 @@ export default function Navbar() {
           className="hover:opacity-80 transition-opacity duration-200 flex-shrink-0"
         >
           <img 
-            src="/img/logo1.png" 
+            src="/img/logo.png" 
             alt="Detallados Premium" 
             className="h-16 md:h-20 w-auto"
             style={{
