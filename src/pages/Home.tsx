@@ -67,7 +67,7 @@ export default function Home() {
       {/* HERO */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.img
-          src="/img/hero.png"
+          src="/img/hero2.png"
           alt="Hero background"
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ scale: 1.1 }}
