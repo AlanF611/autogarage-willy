@@ -34,10 +34,10 @@ const stats = [
 ];
 
 const galleryItems = [
-  { url: '/img/restauracion.jpg', label: 'Restauración' },
+  { url: '/img/restauracion y tapiceria/5.jpeg', label: 'Restauración' },
   { url: '/img/ceramico.png', label: 'PPF' },
   { url: '/img/sound.png', label: 'Audio SQ' },
-  { url: '/img/interior.jpg', label: 'Tapicería' },
+  { url: '/img/restauracion y tapiceria/22.jpeg', label: 'Tapicería' },
   { url: '/img/EXOTICOS.png', label: 'Exóticos' },
 ];
 
