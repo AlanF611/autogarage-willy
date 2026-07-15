@@ -95,9 +95,9 @@ export default function Home() {
               style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', lineHeight: 1 }}
             >
               <span>ARTE</span>
-              <span className="text-gold/50 text-2xl md:text-4xl">•</span>
+              <span className="text-gold/50 text-2xl md:text-4xl"></span>
               <span>EN</span>
-              <span className="text-gold/50 text-2xl md:text-4xl">•</span>
+              <span className="text-gold/50 text-2xl md:text-4xl"></span>
               <span>CADA</span>
             </motion.div>
 
