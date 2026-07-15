@@ -14,17 +14,18 @@ import {
   Quote,
   Phone,
   ArrowRight,
-  Sparkles,
-  Music,
 } from 'lucide-react';
 
 const services = [
-  { icon: Sparkles, title: 'Restauración Premium', desc: 'Restauraciones completas de vehículos clásicos y modernos con estándares de concurso. Cada detalle vuelve a su gloria original.' },
-  { icon: Shield, title: 'PPF & Protección', desc: 'Paint Protection Film de última generación. Protección invisible contra impactos, rayones y contaminación ambiental.' },
-  { icon: Volume2, title: 'Audio Car SQ', desc: 'Sound Quality de competencia. Instalaciones premium de arquitectura sonora con equipos de alta fidelidad.' },
-  { icon: Scissors, title: 'Tapicería Automotriz', desc: 'Interiores a medida con materiales de lujo. Cuero, Alcantara y textiles exclusivos para un acabado perfecto.' },
-  { icon: Palette, title: 'Personalización Exóticos', desc: 'Transformaciones completas para vehículos premium y exóticos. Acabados únicos que reflejan tu visión.' },
-  { icon: Sparkles, title: 'Detallado Cerámico', desc: 'Protección cerámica de última generación que resguarda la pintura con brillo y durabilidad excepcionales.' },
+  { icon: Paintbrush, title: 'Detallado Cerámico', desc: 'Protección cerámica de última generación que resguarda la pintura con brillo y durabilidad excepcionales.' },
+  { icon: Shield, title: 'PPF & Restauraciones', desc: 'Paint Protection Film y corrección de pintura con estándares de perfección inigualables.' },
+  { icon: Scissors, title: 'Tapicería Premium', desc: 'Interiores a medida con materiales de lujo. Cuero, Alcantara y textiles exclusivos.' },
+  { icon: Palette, title: 'Pintura & Repros Tuning', desc: 'Acabados personalizados y réplicas de alta fidelidad que superan estándares de fábrica.' },
+  { icon: ScanLine, title: 'Escaneos 3D', desc: 'Digitalización de carrocería con precisión milimétrica para desarrollo de piezas a medida.' },
+  { icon: Cpu, title: 'Mecatrónica', desc: 'Diagnóstico y electrónica automotriz avanzada con tecnología de punta.' },
+  { icon: Volume2, title: 'Audio Car SQ', desc: 'Sound Quality de competencia e instalaciones premium de arquitectura sonora.' },
+  { icon: Wrench, title: 'Fabricación CNC', desc: 'Piezas personalizadas mecanizadas con precisión industrial. Del CAD al acabado final.' },
+  { icon: MapPin, title: 'GPS & Alarmas', desc: 'Seguridad vehicular inteligente y rastreo en tiempo real con control remoto.' },
 ];
 
 const stats = [
@@ -34,16 +35,16 @@ const stats = [
 ];
 
 const galleryItems = [
-  { url: '/img/restauracion y tapiceria/5.jpeg', label: 'Restauración' },
-  { url: '/img/ceramico.png', label: 'PPF' },
-  { url: '/img/sound.png', label: 'Audio SQ' },
-  { url: '/img/restauracion y tapiceria/22.jpeg', label: 'Tapicería' },
-  { url: '/img/EXOTICOS.png', label: 'Exóticos' },
+  { url: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80', label: 'Cerámica' },
+  { url: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80', label: 'Pintura' },
+  { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&q=80', label: 'Restauración' },
+  { url: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80', label: 'Interior' },
+  { url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80', label: 'Detalle' },
 ];
 
 const testimonials = [
   { name: 'Alejandro M.', car: 'Mercedes-AMG GT', text: 'El nivel de detalle es simplemente otro universo. Mi vehículo salió con un acabado que supera lo que vi en concesionarios europeos. No es un taller, es un atelier.' },
-  { name: 'Carolina R.', car: 'Porsche 911 Turbo S', text: 'La restauración y el PPF transformaron completamente el aspecto. La atención es impecable y cada proceso se explica con rigor técnico. Resultado: perfecto.' },
+  { name: 'Carolina R.', car: 'Porsche 911 Turbo S', text: 'La corrección de pintura y el cerámico transformaron completamente el aspecto. La atención es impecable y cada proceso se explica con rigor técnico. Resultado: perfecto.' },
   { name: 'Fernando V.', car: 'BMW M4 Competition', text: 'El sistema de audio que instalaron es de otro nivel. Sound quality real, no solo volumen. La instalación es limpia, profesional e invisible. Gente que sabe.' },
 ];
 
@@ -64,74 +65,144 @@ const stagger = {
 export default function Home() {
   return (
     <>
-      {/* HERO */}
+      {/* HERO - OPCIÓN 3: TEXTO DISPERSO CON IMAGEN CENTRAL */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Imagen de fondo que actúa como "logo" central */}
         <motion.img
-          src="/img/hero2.png"
-          alt="Hero background"
+          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
+          alt="Vehículo premium"
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.8, ease: 'easeOut' }}
         />
+        
+        {/* Overlay oscuro para mejorar legibilidad */}
         <div className="hero-overlay absolute inset-0" />
 
-        <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-display text-cream"
-            style={{ fontSize: 'clamp(3.5rem, 12vw, 10rem)', lineHeight: 0.9, letterSpacing: '0.04em' }}
-          >
-            ARTE EN CADA DETALLE
-          </motion.h1>
+        {/* Contenido con texto disperso */}
+        <div className="relative z-10 px-4 md:px-6 max-w-7xl mx-auto w-full">
+          {/* Grid para texto disperso */}
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 items-center justify-items-center min-h-[60vh]">
+            
+            {/* ARTE - arriba izquierda */}
+            <motion.span
+              initial={{ opacity: 0, x: -50, y: -30 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-1 md:col-start-1 row-start-1"
+              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
+            >
+              ARTE
+            </motion.span>
+            
+            {/* EN - arriba derecha */}
+            <motion.span
+              initial={{ opacity: 0, x: 50, y: -30 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-2 md:col-start-3 row-start-1"
+              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
+            >
+              EN
+            </motion.span>
+            
+            {/* CADA - abajo izquierda */}
+            <motion.span
+              initial={{ opacity: 0, x: -50, y: 30 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-1 md:col-start-1 row-start-3"
+              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
+            >
+              CADA
+            </motion.span>
+            
+            {/* DETALLE - abajo derecha */}
+            <motion.span
+              initial={{ opacity: 0, x: 50, y: 30 }}
+              animate={{ opacity: 1, x: 0, y: 0 }}
+              transition={{ duration: 0.8, delay: 1.4, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-2 md:col-start-3 row-start-3"
+              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
+            >
+              DETALLE
+            </motion.span>
 
+            {/* Línea decorativa dorada - izquierda */}
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: '100%', opacity: 1 }}
+              transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="h-[1px] bg-gold/40 col-start-1 md:col-start-1 row-start-2 max-w-[80px] md:max-w-[120px] justify-self-start"
+            />
+
+            {/* Línea decorativa dorada - derecha */}
+            <motion.div
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: '100%', opacity: 1 }}
+              transition={{ duration: 1.2, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
+              className="h-[1px] bg-gold/40 col-start-2 md:col-start-3 row-start-2 max-w-[80px] md:max-w-[120px] justify-self-end"
+            />
+
+            {/* Sello o badge decorativo en el centro (opcional) */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.8, type: 'spring', stiffness: 100 }}
+              className="col-span-2 md:col-span-1 row-start-2 col-start-1 md:col-start-2"
+            >
+              <div className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full border-2 border-gold/30 flex items-center justify-center mx-auto backdrop-blur-sm bg-noir/20">
+                <span className="font-display text-gold text-[10px] md:text-xs lg:text-sm tracking-wider text-center leading-tight px-2">
+                  DESDE
+                  <br />
+                  2015
+                </span>
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Subtítulo y acciones - parte inferior */}
           <motion.div
-            initial={{ width: 0 }}
-            animate={{ width: '50%' }}
-            transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="h-[2px] bg-gold mx-auto mt-6"
-            style={{ maxWidth: '300px' }}
-          />
-
-          <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-8 font-body text-cream/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+            transition={{ duration: 0.8, delay: 1.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="text-center mt-8 md:mt-12"
           >
-            Expertos en restauración y personalización de vehículos premium y
-            exóticos. Donde la ingeniería se encuentra con la obsesión.
-          </motion.p>
+            <p className="font-body text-cream/70 text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed px-4">
+              Donde la ingeniería se encuentra con la obsesión. Transformamos
+              vehículos ordinarios en expresiones de excelencia.
+            </p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
-          >
-            <Link
-              to="/servicios"
-              className="inline-flex items-center gap-2 bg-gold text-noir font-display text-lg tracking-wider px-8 py-4 hover:bg-gold-dark transition-colors duration-200"
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 2.1 }}
+              className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
             >
-              NUESTROS SERVICIOS
-              <ChevronRight size={20} />
-            </Link>
-            <Link
-              to="/contacto"
-              className="inline-flex items-center gap-2 border border-gold text-gold font-display text-lg tracking-wider px-8 py-4 hover:bg-gold/10 transition-colors duration-200"
-            >
-              CONTÁCTANOS
-            </Link>
+              <Link
+                to="/servicios"
+                className="inline-flex items-center gap-2 bg-gold text-noir font-display text-base md:text-lg tracking-wider px-6 md:px-8 py-3 md:py-4 hover:bg-gold-dark transition-colors duration-200"
+              >
+                NUESTROS SERVICIOS
+                <ChevronRight size={18} />
+              </Link>
+              <Link
+                to="/contacto"
+                className="inline-flex items-center gap-2 border border-gold text-gold font-display text-base md:text-lg tracking-wider px-6 md:px-8 py-3 md:py-4 hover:bg-gold/10 transition-colors duration-200"
+              >
+                CONTÁCTANOS
+              </Link>
+            </motion.div>
           </motion.div>
         </div>
 
+        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2, duration: 1 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
+          transition={{ delay: 2.5, duration: 1 }}
+          className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20"
         >
           <div className="w-5 h-8 border-2 border-cream/30 rounded-full flex items-start justify-center p-1 animate-bounce">
             <div className="w-1 h-2 bg-gold rounded-full" />
@@ -156,9 +227,6 @@ export default function Home() {
               SERVICIOS DE EXCELENCIA
             </motion.h2>
             <motion.div variants={fadeUp} custom={2} className="mt-6 h-[2px] w-16 bg-gold mx-auto" />
-            <motion.p variants={fadeUp} custom={3} className="mt-6 font-body text-cream/50 max-w-2xl mx-auto">
-              Especialistas en restauración, protección y personalización de vehículos premium y exóticos
-            </motion.p>
           </motion.div>
 
           <motion.div
