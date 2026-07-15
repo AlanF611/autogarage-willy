@@ -1,7 +1,17 @@
 export default function WhatsAppButton() {
+  // Número de teléfono con código de país (sin el +)
+  const phoneNumber = "523322540962";
+  
+  // Mensaje predefinido (codificado para URL)
+  const message = "Hola, me gustaría obtener más información sobre sus servicios.";
+  const encodedMessage = encodeURIComponent(message);
+  
+  // URL de WhatsApp con número y mensaje
+  const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+
   return (
     <a
-      href="https://wa.me/52332540962"
+      href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
       className="fixed bottom-6 right-6 z-50 bg-[#25D366] text-white p-4 rounded-full shadow-lg shadow-[#25D366]/20 hover:bg-[#20bd5a] hover:scale-110 transition-all duration-200"
