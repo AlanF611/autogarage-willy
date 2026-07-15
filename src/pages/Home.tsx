@@ -34,7 +34,6 @@ const stats = [
   { number: 'ISO', label: 'Certificación Internacional' },
 ];
 
-// ✅ TUS IMÁGENES ORIGINALES DE GALERÍA
 const galleryItems = [
   { url: '/img/restauracion y tapiceria/5.jpeg', label: 'Restauración' },
   { url: '/img/ceramico.png', label: 'PPF' },
@@ -66,9 +65,9 @@ const stagger = {
 export default function Home() {
   return (
     <>
-      {/* HERO - Layout en columna con ARTE • EN • CADA arriba y DETALLE abajo */}
+      {/* HERO - ARTE • EN • CADA arriba, DETALLE abajo, centro despejado */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* ✅ IMAGEN HERO */}
+        {/* IMAGEN HERO - CENTRO DESPEJADO */}
         <motion.img
           src="/img/hero2.png"
           alt=""
@@ -80,16 +79,16 @@ export default function Home() {
         <div className="hero-overlay absolute inset-0" />
 
         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
-          {/* TEXTO EN COLUMNA CON ARRIBA/ABAJO */}
+          {/* TEXTO CON ARRIBA/ABAJO - CENTRO LIBRE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-display text-cream"
           >
-            {/* Grupo superior: ARTE • EN • CADA (subido) */}
+            {/* ✅ GRUPO SUPERIOR: ARTE • EN • CADA (subido) */}
             <motion.div
-              initial={{ opacity: 0, y: -20 }}
+              initial={{ opacity: 0, y: -40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-wrap items-center justify-center gap-3 md:gap-6"
@@ -102,12 +101,12 @@ export default function Home() {
               <span>CADA</span>
             </motion.div>
 
-            {/* Separación entre grupos */}
-            <div className="h-4 md:h-8"></div>
+            {/* ✅ ESPACIO GRANDE PARA DEJAR EL CENTRO DESPEJADO */}
+            <div className="h-16 md:h-24 lg:h-32"></div>
 
-            {/* Grupo inferior: DETALLE (bajado) */}
+            {/* ✅ GRUPO INFERIOR: DETALLE (bajado) */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', lineHeight: 1 }}
@@ -125,17 +124,14 @@ export default function Home() {
             style={{ maxWidth: '200px' }}
           />
 
-          {/* NÚMERO 01 + SUBTÍTULO */}
+          {/* SUBTÍTULO Y BOTONES - ABAJO DEL TODO */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 1.0 }}
             className="mt-6"
           >
-            <span className="font-display text-gold text-sm md:text-base tracking-[0.3em]">
-              01
-            </span>
-            <p className="mt-3 font-body text-cream/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-4">
+            <p className="font-body text-cream/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-4">
               Donde la ingeniería se encuentra con la obsesión. Transformamos
               vehículos ordinarios en expresiones de excelencia.
             </p>
@@ -267,7 +263,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* GALLERY TEASER - CON TUS IMÁGENES */}
+      {/* GALLERY TEASER */}
       <section className="py-24 md:py-32 bg-noir overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
