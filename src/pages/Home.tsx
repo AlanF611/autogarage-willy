@@ -65,144 +65,83 @@ const stagger = {
 export default function Home() {
   return (
     <>
-      {/* HERO - OPCIÓN 3: TEXTO DISPERSO CON IMAGEN CENTRAL */}
+      {/* HERO - Texto con más espaciado para dejar el centro visible */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* Imagen de fondo que actúa como "logo" central */}
+        {/* ✅ MANTENGO TU IMAGEN ORIGINAL */}
         <motion.img
           src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
-          alt="Vehículo premium"
+          alt=""
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ scale: 1.1 }}
           animate={{ scale: 1 }}
           transition={{ duration: 1.8, ease: 'easeOut' }}
         />
-        
-        {/* Overlay oscuro para mejorar legibilidad */}
         <div className="hero-overlay absolute inset-0" />
 
-        {/* Contenido con texto disperso */}
-        <div className="relative z-10 px-4 md:px-6 max-w-7xl mx-auto w-full">
-          {/* Grid para texto disperso */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-6 items-center justify-items-center min-h-[60vh]">
-            
-            {/* ARTE - arriba izquierda */}
-            <motion.span
-              initial={{ opacity: 0, x: -50, y: -30 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-1 md:col-start-1 row-start-1"
-              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
-            >
-              ARTE
-            </motion.span>
-            
-            {/* EN - arriba derecha */}
-            <motion.span
-              initial={{ opacity: 0, x: 50, y: -30 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-2 md:col-start-3 row-start-1"
-              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
-            >
-              EN
-            </motion.span>
-            
-            {/* CADA - abajo izquierda */}
-            <motion.span
-              initial={{ opacity: 0, x: -50, y: 30 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.1, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-1 md:col-start-1 row-start-3"
-              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
-            >
-              CADA
-            </motion.span>
-            
-            {/* DETALLE - abajo derecha */}
-            <motion.span
-              initial={{ opacity: 0, x: 50, y: 30 }}
-              animate={{ opacity: 1, x: 0, y: 0 }}
-              transition={{ duration: 0.8, delay: 1.4, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="font-display text-cream/30 md:text-cream/40 text-2xl md:text-5xl lg:text-6xl tracking-wider col-start-2 md:col-start-3 row-start-3"
-              style={{ textShadow: '0 2px 20px rgba(0,0,0,0.5)' }}
-            >
-              DETALLE
-            </motion.span>
+        <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
+          {/* ✅ TEXTO CON MÁS ESPACIADO ENTRE LETRAS Y PALABRAS */}
+          <motion.h1
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="font-display text-cream flex flex-wrap items-center justify-center gap-6 md:gap-12 lg:gap-16"
+            style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', lineHeight: 1.2, letterSpacing: '0.15em' }}
+          >
+            <span>ARTE</span>
+            <span className="text-gold/60">•</span>
+            <span>EN</span>
+            <span className="text-gold/60">•</span>
+            <span>CADA</span>
+            <span className="text-gold/60">•</span>
+            <span>DETALLE</span>
+          </motion.h1>
 
-            {/* Línea decorativa dorada - izquierda */}
-            <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: '100%', opacity: 1 }}
-              transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="h-[1px] bg-gold/40 col-start-1 md:col-start-1 row-start-2 max-w-[80px] md:max-w-[120px] justify-self-start"
-            />
+          {/* ✅ LÍNEA DORADA MÁS CORTA PARA DEJAR ESPACIO */}
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: '30%' }}
+            transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="h-[2px] bg-gold mx-auto mt-6"
+            style={{ maxWidth: '200px' }}
+          />
 
-            {/* Línea decorativa dorada - derecha */}
-            <motion.div
-              initial={{ width: 0, opacity: 0 }}
-              animate={{ width: '100%', opacity: 1 }}
-              transition={{ duration: 1.2, delay: 1.0, ease: [0.25, 0.46, 0.45, 0.94] }}
-              className="h-[1px] bg-gold/40 col-start-2 md:col-start-3 row-start-2 max-w-[80px] md:max-w-[120px] justify-self-end"
-            />
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.2 }}
+            className="mt-8 font-body text-cream/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
+          >
+            Donde la ingeniería se encuentra con la obsesión. Transformamos
+            vehículos ordinarios en expresiones de excelencia.
+          </motion.p>
 
-            {/* Sello o badge decorativo en el centro (opcional) */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.5 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 0.8, type: 'spring', stiffness: 100 }}
-              className="col-span-2 md:col-span-1 row-start-2 col-start-1 md:col-start-2"
-            >
-              <div className="w-20 h-20 md:w-28 md:h-28 lg:w-36 lg:h-36 rounded-full border-2 border-gold/30 flex items-center justify-center mx-auto backdrop-blur-sm bg-noir/20">
-                <span className="font-display text-gold text-[10px] md:text-xs lg:text-sm tracking-wider text-center leading-tight px-2">
-                  DESDE
-                  <br />
-                  2015
-                </span>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Subtítulo y acciones - parte inferior */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="text-center mt-8 md:mt-12"
+            transition={{ duration: 0.8, delay: 1.5 }}
+            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
-            <p className="font-body text-cream/70 text-base md:text-lg lg:text-xl max-w-2xl mx-auto leading-relaxed px-4">
-              Donde la ingeniería se encuentra con la obsesión. Transformamos
-              vehículos ordinarios en expresiones de excelencia.
-            </p>
-
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 2.1 }}
-              className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            <Link
+              to="/servicios"
+              className="inline-flex items-center gap-2 bg-gold text-noir font-display text-lg tracking-wider px-8 py-4 hover:bg-gold-dark transition-colors duration-200"
             >
-              <Link
-                to="/servicios"
-                className="inline-flex items-center gap-2 bg-gold text-noir font-display text-base md:text-lg tracking-wider px-6 md:px-8 py-3 md:py-4 hover:bg-gold-dark transition-colors duration-200"
-              >
-                NUESTROS SERVICIOS
-                <ChevronRight size={18} />
-              </Link>
-              <Link
-                to="/contacto"
-                className="inline-flex items-center gap-2 border border-gold text-gold font-display text-base md:text-lg tracking-wider px-6 md:px-8 py-3 md:py-4 hover:bg-gold/10 transition-colors duration-200"
-              >
-                CONTÁCTANOS
-              </Link>
-            </motion.div>
+              NUESTROS SERVICIOS
+              <ChevronRight size={20} />
+            </Link>
+            <Link
+              to="/contacto"
+              className="inline-flex items-center gap-2 border border-gold text-gold font-display text-lg tracking-wider px-8 py-4 hover:bg-gold/10 transition-colors duration-200"
+            >
+              CONTÁCTANOS
+            </Link>
           </motion.div>
         </div>
 
-        {/* Scroll indicator */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 2.5, duration: 1 }}
-          className="absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-20"
+          transition={{ delay: 2, duration: 1 }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <div className="w-5 h-8 border-2 border-cream/30 rounded-full flex items-start justify-center p-1 animate-bounce">
             <div className="w-1 h-2 bg-gold rounded-full" />
