@@ -69,7 +69,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* ✅ MANTENGO TU IMAGEN ORIGINAL */}
         <motion.img
-          src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=1920&q=80"
+          src="/img/hero2.png"
           alt=""
           className="absolute inset-0 w-full h-full object-cover"
           initial={{ scale: 1.1 }}
