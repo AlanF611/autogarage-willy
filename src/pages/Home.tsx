@@ -65,9 +65,9 @@ const stagger = {
 export default function Home() {
   return (
     <>
-      {/* HERO - ARTE • EN • CADA arriba, DETALLE abajo, centro despejado */}
+      {/* HERO - ARTE • EN • CADA muy arriba, DETALLE muy abajo, centro completamente despejado */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* IMAGEN HERO - CENTRO DESPEJADO */}
+        {/* IMAGEN HERO */}
         <motion.img
           src="/img/hero2.png"
           alt=""
@@ -79,16 +79,16 @@ export default function Home() {
         <div className="hero-overlay absolute inset-0" />
 
         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
-          {/* TEXTO CON ARRIBA/ABAJO - CENTRO LIBRE */}
+          {/* TEXTO CON MUCHA SEPARACIÓN - CENTRO COMPLETAMENTE LIBRE */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="font-display text-cream"
           >
-            {/* ✅ GRUPO SUPERIOR: ARTE • EN • CADA (subido) */}
+            {/* ✅ GRUPO SUPERIOR: ARTE • EN • CADA (MUY SUBIDO) */}
             <motion.div
-              initial={{ opacity: 0, y: -40 }}
+              initial={{ opacity: 0, y: -80 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               className="flex flex-wrap items-center justify-center gap-3 md:gap-6"
@@ -101,12 +101,12 @@ export default function Home() {
               <span>CADA</span>
             </motion.div>
 
-            {/* ✅ ESPACIO GRANDE PARA DEJAR EL CENTRO DESPEJADO */}
-            <div className="h-16 md:h-24 lg:h-32"></div>
+            {/* ✅ ESPACIO ENORME PARA DEJAR EL CENTRO COMPLETAMENTE DESPEJADO */}
+            <div className="h-32 md:h-48 lg:h-64"></div>
 
-            {/* ✅ GRUPO INFERIOR: DETALLE (bajado) */}
+            {/* ✅ GRUPO INFERIOR: DETALLE (MUY BAJADO) */}
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={{ opacity: 0, y: 80 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5 }}
               style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', lineHeight: 1 }}
@@ -124,7 +124,7 @@ export default function Home() {
             style={{ maxWidth: '200px' }}
           />
 
-          {/* SUBTÍTULO Y BOTONES - ABAJO DEL TODO */}
+          {/* SUBTÍTULO Y BOTONES - MUY ABAJO */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
