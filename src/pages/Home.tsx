@@ -34,12 +34,13 @@ const stats = [
   { number: 'ISO', label: 'Certificación Internacional' },
 ];
 
+// ✅ TUS IMÁGENES ORIGINALES DE GALERÍA
 const galleryItems = [
-  { url: 'https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=600&q=80', label: 'Cerámica' },
-  { url: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=600&q=80', label: 'Pintura' },
-  { url: 'https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?w=600&q=80', label: 'Restauración' },
-  { url: 'https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=600&q=80', label: 'Interior' },
-  { url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=600&q=80', label: 'Detalle' },
+  { url: '/img/restauracion y tapiceria/5.jpeg', label: 'Restauración' },
+  { url: '/img/ceramico.png', label: 'PPF' },
+  { url: '/img/sound.png', label: 'Audio SQ' },
+  { url: '/img/restauracion y tapiceria/22.jpeg', label: 'Tapicería' },
+  { url: '/img/EXOTICOS.png', label: 'Exóticos' },
 ];
 
 const testimonials = [
@@ -65,9 +66,9 @@ const stagger = {
 export default function Home() {
   return (
     <>
-      {/* HERO - Texto con más espaciado para dejar el centro visible */}
+      {/* HERO - Layout en columna con ARTE • EN • CADA arriba y DETALLE abajo */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* ✅ MANTENGO TU IMAGEN ORIGINAL */}
+        {/* ✅ IMAGEN HERO */}
         <motion.img
           src="/img/hero2.png"
           alt=""
@@ -79,64 +80,91 @@ export default function Home() {
         <div className="hero-overlay absolute inset-0" />
 
         <div className="relative z-10 text-center px-6 max-w-7xl mx-auto">
-          {/* ✅ TEXTO CON MÁS ESPACIADO ENTRE LETRAS Y PALABRAS */}
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
+          {/* TEXTO EN COLUMNA CON ARRIBA/ABAJO */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.25, 0.46, 0.45, 0.94] }}
-            className="font-display text-cream flex flex-wrap items-center justify-center gap-6 md:gap-12 lg:gap-16"
-            style={{ fontSize: 'clamp(3rem, 10vw, 8rem)', lineHeight: 1.2, letterSpacing: '0.15em' }}
+            className="font-display text-cream"
           >
-            <span>ARTE</span>
-            <span className="text-gold/60">•</span>
-            <span>EN</span>
-            <span className="text-gold/60">•</span>
-            <span>CADA</span>
-            <span className="text-gold/60">•</span>
-            <span>DETALLE</span>
-          </motion.h1>
+            {/* Grupo superior: ARTE • EN • CADA (subido) */}
+            <motion.div
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="flex flex-wrap items-center justify-center gap-3 md:gap-6"
+              style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', lineHeight: 1 }}
+            >
+              <span>ARTE</span>
+              <span className="text-gold/50 text-2xl md:text-4xl">•</span>
+              <span>EN</span>
+              <span className="text-gold/50 text-2xl md:text-4xl">•</span>
+              <span>CADA</span>
+            </motion.div>
 
-          {/* ✅ LÍNEA DORADA MÁS CORTA PARA DEJAR ESPACIO */}
+            {/* Separación entre grupos */}
+            <div className="h-4 md:h-8"></div>
+
+            {/* Grupo inferior: DETALLE (bajado) */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              style={{ fontSize: 'clamp(2.5rem, 8vw, 6rem)', lineHeight: 1 }}
+            >
+              <span>DETALLE</span>
+            </motion.div>
+          </motion.div>
+
+          {/* LÍNEA DORADA */}
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: '30%' }}
+            animate={{ width: '40%' }}
             transition={{ duration: 1.2, delay: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
             className="h-[2px] bg-gold mx-auto mt-6"
             style={{ maxWidth: '200px' }}
           />
 
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.2 }}
-            className="mt-8 font-body text-cream/70 text-lg md:text-xl max-w-2xl mx-auto leading-relaxed"
-          >
-            Donde la ingeniería se encuentra con la obsesión. Transformamos
-            vehículos ordinarios en expresiones de excelencia.
-          </motion.p>
-
+          {/* NÚMERO 01 + SUBTÍTULO */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 1.5 }}
-            className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4"
+            transition={{ duration: 0.8, delay: 1.0 }}
+            className="mt-6"
+          >
+            <span className="font-display text-gold text-sm md:text-base tracking-[0.3em]">
+              01
+            </span>
+            <p className="mt-3 font-body text-cream/70 text-base md:text-lg max-w-2xl mx-auto leading-relaxed px-4">
+              Donde la ingeniería se encuentra con la obsesión. Transformamos
+              vehículos ordinarios en expresiones de excelencia.
+            </p>
+          </motion.div>
+
+          {/* BOTONES */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 1.3 }}
+            className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4"
           >
             <Link
               to="/servicios"
-              className="inline-flex items-center gap-2 bg-gold text-noir font-display text-lg tracking-wider px-8 py-4 hover:bg-gold-dark transition-colors duration-200"
+              className="inline-flex items-center gap-2 bg-gold text-noir font-display text-base md:text-lg tracking-wider px-6 md:px-8 py-3 md:py-4 hover:bg-gold-dark transition-colors duration-200"
             >
               NUESTROS SERVICIOS
-              <ChevronRight size={20} />
+              <ChevronRight size={18} />
             </Link>
             <Link
               to="/contacto"
-              className="inline-flex items-center gap-2 border border-gold text-gold font-display text-lg tracking-wider px-8 py-4 hover:bg-gold/10 transition-colors duration-200"
+              className="inline-flex items-center gap-2 border border-gold text-gold font-display text-base md:text-lg tracking-wider px-6 md:px-8 py-3 md:py-4 hover:bg-gold/10 transition-colors duration-200"
             >
               CONTÁCTANOS
             </Link>
           </motion.div>
         </div>
 
+        {/* SCROLL INDICATOR */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -239,7 +267,7 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* GALLERY TEASER */}
+      {/* GALLERY TEASER - CON TUS IMÁGENES */}
       <section className="py-24 md:py-32 bg-noir overflow-hidden">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div
