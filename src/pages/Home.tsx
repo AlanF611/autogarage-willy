@@ -401,7 +401,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a
-              href="https://wa.me/5215555555555"
+              href="https://wa.me/+523322540962"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-[#25D366] text-white font-display text-lg tracking-wider px-8 py-4 hover:bg-[#20bd5a] transition-colors duration-200"
